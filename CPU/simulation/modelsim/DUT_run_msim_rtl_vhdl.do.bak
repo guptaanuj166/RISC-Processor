@@ -1,0 +1,35 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/Zero_Check.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/Temporary_Register_8bit.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/Temporary_Register_3bit.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/Temporary_Register.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/T1.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/SE9.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/SE6.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/Register_File.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/PE.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/PC.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/op_code_finder.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/memory.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/decoder_for_Encoder.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/data_postfix.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/continue_flag_tracker.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/AND_Gate.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/ALU.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/all_components.vhd}
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/data_path.vhd}
+
+vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Edited/Edited_pro/FINALCPU/Testbench.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  Testbench
+
+add wave *
+view structure
+view signals
+run -all

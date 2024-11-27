@@ -1,0 +1,149 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "continue_flag",
+					"strict" : false
+				},
+				{
+					"name" : "iszero",
+					"strict" : false
+				},
+				{
+					"name" : "zero_flag",
+					"strict" : false
+				},
+				{
+					"name" : "carry_flag",
+					"strict" : false
+				},
+				{
+					"name" : "op_code[0]",
+					"strict" : false
+				},
+				{
+					"name" : "op_code[1]",
+					"strict" : false
+				},
+				{
+					"name" : "op_code[2]",
+					"strict" : false
+				},
+				{
+					"name" : "op_code[3]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_a_select",
+					"strict" : false
+				},
+				{
+					"name" : "alu_b_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_b_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "t5_E",
+					"strict" : false
+				},
+				{
+					"name" : "alu_op_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_op_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "t2_E",
+					"strict" : false
+				},
+				{
+					"name" : "pc_select",
+					"strict" : false
+				},
+				{
+					"name" : "pc_E",
+					"strict" : false
+				},
+				{
+					"name" : "t1_E",
+					"strict" : false
+				},
+				{
+					"name" : "t3_E",
+					"strict" : false
+				},
+				{
+					"name" : "t5_select",
+					"strict" : false
+				},
+				{
+					"name" : "t2_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "t2_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_a2_select",
+					"strict" : false
+				},
+				{
+					"name" : "rf_read",
+					"strict" : false
+				},
+				{
+					"name" : "mem_add_select",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read",
+					"strict" : false
+				},
+				{
+					"name" : "t3_select",
+					"strict" : false
+				},
+				{
+					"name" : "t4_E",
+					"strict" : false
+				},
+				{
+					"name" : "rf_d3_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_d3_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_a3_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_a3_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_write",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

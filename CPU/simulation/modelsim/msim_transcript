@@ -1,0 +1,274 @@
+# Reading pref.tcl
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Components_package.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:21 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Components_package.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_package
+# End time: 22:43:21 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Zero_Check.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:21 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Zero_Check.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Zero_checker
+# -- Compiling architecture zero_ext of Zero_checker
+# End time: 22:43:21 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_8bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:21 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_8bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Temporary_Register_8bit
+# -- Compiling architecture Temp_R8 of Temporary_Register_8bit
+# End time: 22:43:21 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_3bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:21 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_3bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Temporary_Register_3bit
+# -- Compiling architecture Temp_R3 of Temporary_Register_3bit
+# End time: 22:43:21 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:21 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Temporary_Register
+# -- Compiling architecture Temp_R of Temporary_Register
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/T1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/T1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity t1
+# -- Compiling architecture t1ar of t1
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE9.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE9.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SE9
+# -- Compiling architecture SE9ar of SE9
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE6.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE6.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SE6
+# -- Compiling architecture SE6ar of SE6
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Register_File
+# -- Compiling architecture rf of Register_File
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PE
+# -- Compiling architecture priority_encoder of PE
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PC.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PC
+# -- Compiling architecture PC_R of PC
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/op_code_finder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/op_code_finder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity op_code_finder
+# -- Compiling architecture OPF of op_code_finder
+# End time: 22:43:22 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:22 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory
+# -- Compiling architecture mem of memory
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:23 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_for_Encoder
+# -- Compiling architecture reg_dec of decoder_for_Encoder
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_postfix.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:23 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_postfix.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity data_postfix
+# -- Compiling architecture DP of data_postfix
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:23 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity continue_flag_tracker
+# -- Compiling architecture CFT of continue_flag_tracker
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/AND_Gate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:23 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/AND_Gate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AND_Gate
+# -- Compiling architecture AND_ar of AND_Gate
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:23 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture alu of ALU
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:23 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components_package
+# -- Compiling entity data_path
+# -- Compiling architecture dpth of data_path
+# End time: 22:43:23 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:24 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture bhv of Testbench
+# End time: 22:43:24 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 22:43:24 on Nov 30,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(bhv)
+# Loading work.components_package
+# Loading work.data_path(dpth)
+# Loading ieee.numeric_std(body)
+# Loading work.memory(mem)
+# Loading work.continue_flag_tracker(cft)
+# Loading work.data_postfix(dp)
+# Loading work.se9(se9ar)
+# Loading work.se6(se6ar)
+# Loading work.pe(priority_encoder)
+# Loading work.decoder_for_encoder(reg_dec)
+# Loading work.and_gate(and_ar)
+# Loading work.zero_checker(zero_ext)
+# Loading work.t1(t1ar)
+# Loading work.op_code_finder(opf)
+# Loading work.register_file(rf)
+# Loading work.alu(alu)
+# Loading work.pc(pc_r)
+# Loading work.temporary_register(temp_r)
+# Loading work.temporary_register_3bit(temp_r3)
+# Loading work.temporary_register_8bit(temp_r8)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 22:43:36 on Nov 30,2022, Elapsed time: 0:00:12
+# Errors: 0, Warnings: 0

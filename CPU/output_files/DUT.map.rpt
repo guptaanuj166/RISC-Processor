@@ -1,0 +1,990 @@
+Analysis & Synthesis report for DUT
+Wed Nov 30 22:44:00 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: ALU:Arithmetic_Logical_Unit|lpm_add_sub:Add1
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Nov 30 22:44:00 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; DUT                                         ;
+; Top-level Entity Name              ; data_path                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,168                                       ;
+;     Total combinational functions  ; 914                                         ;
+;     Dedicated logic registers      ; 443                                         ;
+; Total registers                    ; 443                                         ;
+; Total pins                         ; 37                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M25SAE144C8G     ;                    ;
+; Top-level entity name                                            ; data_path          ; DUT                ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; Components_package.vhd           ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Components_package.vhd      ;         ;
+; Zero_Check.vhd                   ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Zero_Check.vhd              ;         ;
+; Temporary_Register_8bit.vhd      ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_8bit.vhd ;         ;
+; Temporary_Register_3bit.vhd      ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_3bit.vhd ;         ;
+; Temporary_Register.vhd           ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register.vhd      ;         ;
+; T1.vhd                           ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/T1.vhd                      ;         ;
+; SE9.vhd                          ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE9.vhd                     ;         ;
+; SE6.vhd                          ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE6.vhd                     ;         ;
+; Register_File.vhd                ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd           ;         ;
+; PE.vhd                           ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd                      ;         ;
+; PC.vhd                           ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PC.vhd                      ;         ;
+; op_code_finder.vhd               ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/op_code_finder.vhd          ;         ;
+; memory.vhd                       ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd                  ;         ;
+; decoder_for_Encoder.vhd          ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd     ;         ;
+; data_postfix.vhd                 ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_postfix.vhd            ;         ;
+; data_path.vhd                    ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd               ;         ;
+; continue_flag_tracker.vhd        ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd   ;         ;
+; AND_Gate.vhd                     ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/AND_Gate.vhd                ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File               ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd                     ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                               ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc                                   ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc                                  ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                                  ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc                                  ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                       ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                ;         ;
+; db/add_sub_hai.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/db/add_sub_hai.tdf          ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,168     ;
+;                                             ;           ;
+; Total combinational functions               ; 914       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 453       ;
+;     -- 3 input functions                    ; 325       ;
+;     -- <=2 input functions                  ; 136       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 825       ;
+;     -- arithmetic mode                      ; 89        ;
+;                                             ;           ;
+; Total registers                             ; 443       ;
+;     -- Dedicated logic registers            ; 443       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 37        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 443       ;
+; Total fan-out                               ; 4349      ;
+; Average fan-out                             ; 3.04      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                ; Entity Name             ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------+-------------------------+--------------+
+; |data_path                            ; 914 (218)           ; 443 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 37   ; 0            ; 0          ; |data_path                                                                         ; data_path               ; work         ;
+;    |ALU:Arithmetic_Logical_Unit|      ; 191 (158)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|ALU:Arithmetic_Logical_Unit                                             ; ALU                     ; work         ;
+;       |lpm_add_sub:Add1|              ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|ALU:Arithmetic_Logical_Unit|lpm_add_sub:Add1                            ; lpm_add_sub             ; work         ;
+;          |add_sub_hai:auto_generated| ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|ALU:Arithmetic_Logical_Unit|lpm_add_sub:Add1|add_sub_hai:auto_generated ; add_sub_hai             ; work         ;
+;    |PC:Program_counter|               ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|PC:Program_counter                                                      ; PC                      ; work         ;
+;    |PE:Priority_Encoder|              ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|PE:Priority_Encoder                                                     ; PE                      ; work         ;
+;    |Register_File:RF|                 ; 209 (209)           ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|Register_File:RF                                                        ; Register_File           ; work         ;
+;    |Temporary_Register:T2|            ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|Temporary_Register:T2                                                   ; Temporary_Register      ; work         ;
+;    |Temporary_Register:T3|            ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|Temporary_Register:T3                                                   ; Temporary_Register      ; work         ;
+;    |Temporary_Register_3bit:T4|       ; 0 (0)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|Temporary_Register_3bit:T4                                              ; Temporary_Register_3bit ; work         ;
+;    |Temporary_Register_8bit:T5|       ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|Temporary_Register_8bit:T5                                              ; Temporary_Register_8bit ; work         ;
+;    |Zero_checker:Zero_check|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|Zero_checker:Zero_check                                                 ; Zero_checker            ; work         ;
+;    |continue_flag_tracker:CFT|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|continue_flag_tracker:CFT                                               ; continue_flag_tracker   ; work         ;
+;    |memory:Mem|                       ; 279 (279)           ; 240 (240)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|memory:Mem                                                              ; memory                  ; work         ;
+;    |t1:T1R|                           ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |data_path|t1:T1R                                                                  ; t1                      ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                             ;
++-----------------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                                ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-----------------------------------------------------------+--------------------------------------------+------------------------+
+; continue_flag_tracker:CFT|con_var                         ; continue_flag_tracker:CFT|con_var          ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[0]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[1]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[2]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[3]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[4]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[5]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[6]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[7]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[8]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[9]                 ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[10]                ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[11]                ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[12]                ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[13]                ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[14]                ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_temp[15]                ; ALU:Arithmetic_Logical_Unit|alu_c_temp[15] ; yes                    ;
+; alu_in_b[15]                                              ; VCC                                        ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[1]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[2]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[3]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[4]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[5]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[6]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[7]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[8]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[9]  ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[10] ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[11] ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[12] ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[13] ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[14] ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[15] ; alu_op_select[1]                           ; yes                    ;
+; ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[0]  ; alu_op_select[1]                           ; yes                    ;
+; T5_data_in[0]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[1]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[2]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[3]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[4]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[5]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[6]                                             ; t5_E                                       ; yes                    ;
+; T5_data_in[7]                                             ; t5_E                                       ; yes                    ;
+; alu_in_b[0]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[1]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[2]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[3]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[4]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[5]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[6]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[7]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[8]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[9]                                               ; VCC                                        ; yes                    ;
+; alu_in_b[10]                                              ; VCC                                        ; yes                    ;
+; alu_in_b[11]                                              ; VCC                                        ; yes                    ;
+; alu_in_b[12]                                              ; VCC                                        ; yes                    ;
+; alu_in_b[13]                                              ; VCC                                        ; yes                    ;
+; alu_in_b[14]                                              ; VCC                                        ; yes                    ;
+; Register_File:RF|D2_Temp[15]                              ; rf_read                                    ; yes                    ;
+; T2_data_in[15]                                            ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[14]                              ; rf_read                                    ; yes                    ;
+; T2_data_in[14]                                            ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[13]                              ; rf_read                                    ; yes                    ;
+; T2_data_in[13]                                            ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[12]                              ; rf_read                                    ; yes                    ;
+; T2_data_in[12]                                            ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[11]                              ; rf_read                                    ; yes                    ;
+; T2_data_in[11]                                            ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[10]                              ; rf_read                                    ; yes                    ;
+; T2_data_in[10]                                            ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[9]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[9]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[8]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[8]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[7]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[7]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[6]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[6]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[5]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[5]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[4]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[4]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[3]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[3]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[2]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[2]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[1]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[1]                                             ; T2_data_in[0]                              ; yes                    ;
+; Register_File:RF|D2_Temp[0]                               ; rf_read                                    ; yes                    ;
+; T2_data_in[0]                                             ; T2_data_in[0]                              ; yes                    ;
+; memory:Mem|data_out[12]                                   ; mem_read                                   ; yes                    ;
+; memory:Mem|data_out[13]                                   ; mem_read                                   ; yes                    ;
+; memory:Mem|data_out[14]                                   ; mem_read                                   ; yes                    ;
+; memory:Mem|data_out[15]                                   ; mem_read                                   ; yes                    ;
+; memory:Mem|data_out[0]                                    ; mem_read                                   ; yes                    ;
+; memory:Mem|data_out[1]                                    ; mem_read                                   ; yes                    ;
+; decoder_for_Encoder:DFE|decoder_Encoder_out[7]            ; GND                                        ; yes                    ;
+; T3_data_in[15]                                            ; t3_E                                       ; yes                    ;
+; memory:Mem|data_out[5]                                    ; mem_read                                   ; yes                    ;
+; memory:Mem|data_out[8]                                    ; mem_read                                   ; yes                    ;
+; Register_File:RF|D1_Temp[15]                              ; rf_read                                    ; yes                    ;
+; Number of user-specified and inferred latches = 144       ;                                            ;                        ;
++-----------------------------------------------------------+--------------------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 443   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 443   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Register_File:RF|R5[2]                 ; 2       ;
+; Register_File:RF|R4[2]                 ; 2       ;
+; Register_File:RF|R6[2]                 ; 2       ;
+; Register_File:RF|R3[1]                 ; 2       ;
+; Register_File:RF|R2[1]                 ; 2       ;
+; Register_File:RF|R6[1]                 ; 2       ;
+; Register_File:RF|R5[0]                 ; 2       ;
+; Register_File:RF|R3[0]                 ; 2       ;
+; Register_File:RF|R1[0]                 ; 2       ;
+; Total number of inverted registers = 9 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |data_path|T2_data_in[7]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |data_path|data3_writer[0]              ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |data_path|data3_writer[11]             ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |data_path|add3_read[0]                 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |data_path|alu_in_b[9]                  ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |data_path|Register_File:RF|D2_Temp[11] ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |data_path|Register_File:RF|D1_Temp[14] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ALU:Arithmetic_Logical_Unit|lpm_add_sub:Add1 ;
++------------------------+-------------+--------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                   ;
++------------------------+-------------+--------------------------------------------------------+
+; LPM_WIDTH              ; 16          ; Untyped                                                ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                                                ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                                ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                     ;
+; DEVICE_FAMILY          ; MAX 10      ; Untyped                                                ;
+; USE_WYS                ; OFF         ; Untyped                                                ;
+; STYLE                  ; FAST        ; Untyped                                                ;
+; CBXI_PARAMETER         ; add_sub_hai ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                         ;
++------------------------+-------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 37                          ;
+; cycloneiii_ff         ; 443                         ;
+;     ENA               ; 443                         ;
+; cycloneiii_lcell_comb ; 914                         ;
+;     arith             ; 89                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 59                          ;
+;     normal            ; 825                         ;
+;         1 data inputs ; 84                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 266                         ;
+;         4 data inputs ; 453                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.90                        ;
+; Average LUT depth     ; 4.39                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Nov 30 22:43:42 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FINALCPU -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 0 entities, in source file components_package.vhd
+    Info (12022): Found design unit 1: components_package File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Components_package.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file zero_check.vhd
+    Info (12022): Found design unit 1: Zero_checker-zero_ext File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Zero_Check.vhd Line: 12
+    Info (12023): Found entity 1: Zero_checker File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Zero_Check.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
+    Info (12022): Found design unit 1: Testbench-bhv File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Testbench.vhd Line: 7
+    Info (12023): Found entity 1: Testbench File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Testbench.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file temporary_register_8bit.vhd
+    Info (12022): Found design unit 1: Temporary_Register_8bit-Temp_R8 File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_8bit.vhd Line: 16
+    Info (12023): Found entity 1: Temporary_Register_8bit File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_8bit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file temporary_register_3bit.vhd
+    Info (12022): Found design unit 1: Temporary_Register_3bit-Temp_R3 File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_3bit.vhd Line: 16
+    Info (12023): Found entity 1: Temporary_Register_3bit File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register_3bit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file temporary_register.vhd
+    Info (12022): Found design unit 1: Temporary_Register-Temp_R File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register.vhd Line: 15
+    Info (12023): Found entity 1: Temporary_Register File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Temporary_Register.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file t1.vhd
+    Info (12022): Found design unit 1: t1-t1ar File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/T1.vhd Line: 10
+    Info (12023): Found entity 1: t1 File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/T1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file se9.vhd
+    Info (12022): Found design unit 1: SE9-SE9ar File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE9.vhd Line: 14
+    Info (12023): Found entity 1: SE9 File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE9.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file se6.vhd
+    Info (12022): Found design unit 1: SE6-SE6ar File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE6.vhd Line: 13
+    Info (12023): Found entity 1: SE6 File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/SE6.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
+    Info (12022): Found design unit 1: Register_File-rf File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 31
+    Info (12023): Found entity 1: Register_File File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pe.vhd
+    Info (12022): Found design unit 1: PE-priority_encoder File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd Line: 11
+    Info (12023): Found entity 1: PE File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC-PC_R File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PC.vhd Line: 15
+    Info (12023): Found entity 1: PC File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file op_code_finder.vhd
+    Info (12022): Found design unit 1: op_code_finder-OPF File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/op_code_finder.vhd Line: 11
+    Info (12023): Found entity 1: op_code_finder File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/op_code_finder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-mem File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 28
+    Info (12023): Found entity 1: memory File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file decoder_for_encoder.vhd
+    Info (12022): Found design unit 1: decoder_for_Encoder-reg_dec File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 10
+    Info (12023): Found entity 1: decoder_for_Encoder File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file data_postfix.vhd
+    Info (12022): Found design unit 1: data_postfix-DP File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_postfix.vhd Line: 10
+    Info (12023): Found entity 1: data_postfix File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_postfix.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file data_path.vhd
+    Info (12022): Found design unit 1: data_path-dpth File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 79
+    Info (12023): Found entity 1: data_path File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controlpath-cntrl File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/controller.vhd Line: 76
+    Info (12023): Found entity 1: controlpath File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/controller.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file continue_flag_tracker.vhd
+    Info (12022): Found design unit 1: continue_flag_tracker-CFT File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd Line: 10
+    Info (12023): Found entity 1: continue_flag_tracker File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file and_gate.vhd
+    Info (12022): Found design unit 1: AND_Gate-AND_ar File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/AND_Gate.vhd Line: 13
+    Info (12023): Found entity 1: AND_Gate File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/AND_Gate.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-alu File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 16
+    Info (12023): Found entity 1: ALU File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 6
+Info (12127): Elaborating entity "data_path" for the top level hierarchy
+Info (10041): Inferred latch for "PC_in[0]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[1]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[2]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[3]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[4]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[5]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[6]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[7]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[8]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[9]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[10]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[11]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[12]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[13]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[14]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "PC_in[15]" at data_path.vhd(211) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 211
+Info (10041): Inferred latch for "mem_add_in[0]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[1]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[2]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[3]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[4]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[5]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[6]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[7]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[8]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[9]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[10]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[11]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[12]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[13]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[14]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_add_in[15]" at data_path.vhd(197) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 197
+Info (10041): Inferred latch for "mem_data_in[0]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[1]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[2]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[3]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[4]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[5]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[6]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[7]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[8]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[9]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[10]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[11]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[12]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[13]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[14]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "mem_data_in[15]" at data_path.vhd(195) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 195
+Info (10041): Inferred latch for "data3_writer[0]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[1]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[2]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[3]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[4]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[5]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[6]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[7]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[8]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[9]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[10]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[11]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[12]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[13]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[14]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "data3_writer[15]" at data_path.vhd(188) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Info (10041): Inferred latch for "add3_read[0]" at data_path.vhd(183) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 183
+Info (10041): Inferred latch for "add3_read[1]" at data_path.vhd(183) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 183
+Info (10041): Inferred latch for "add3_read[2]" at data_path.vhd(183) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 183
+Info (10041): Inferred latch for "add2_read[0]" at data_path.vhd(180) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 180
+Info (10041): Inferred latch for "add2_read[1]" at data_path.vhd(180) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 180
+Info (10041): Inferred latch for "add2_read[2]" at data_path.vhd(180) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 180
+Info (10041): Inferred latch for "T5_data_in[0]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[1]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[2]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[3]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[4]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[5]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[6]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T5_data_in[7]" at data_path.vhd(174) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 174
+Info (10041): Inferred latch for "T4_data_in[0]" at data_path.vhd(170) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 170
+Info (10041): Inferred latch for "T4_data_in[1]" at data_path.vhd(170) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 170
+Info (10041): Inferred latch for "T4_data_in[2]" at data_path.vhd(170) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 170
+Info (10041): Inferred latch for "T3_data_in[0]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[1]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[2]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[3]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[4]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[5]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[6]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[7]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[8]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[9]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[10]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[11]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[12]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[13]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[14]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T3_data_in[15]" at data_path.vhd(166) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 166
+Info (10041): Inferred latch for "T2_data_in[0]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[1]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[2]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[3]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[4]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[5]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[6]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[7]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[8]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[9]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[10]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[11]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[12]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[13]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[14]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "T2_data_in[15]" at data_path.vhd(161) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+Info (10041): Inferred latch for "alu_in_b[0]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[1]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[2]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[3]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[4]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[5]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[6]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[7]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[8]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[9]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[10]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[11]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[12]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[13]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[14]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_b[15]" at data_path.vhd(150) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 150
+Info (10041): Inferred latch for "alu_in_a[0]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[1]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[2]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[3]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[4]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[5]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[6]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[7]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[8]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[9]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[10]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[11]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[12]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[13]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[14]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (10041): Inferred latch for "alu_in_a[15]" at data_path.vhd(147) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 147
+Info (12128): Elaborating entity "memory" for hierarchy "memory:Mem" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 216
+Warning (10492): VHDL Process Statement warning at memory.vhd(61): signal "memory_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at memory.vhd(62): signal "memory_element" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at memory.vhd(62): signal "address_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 62
+Warning (10631): VHDL Process Statement warning at memory.vhd(54): inferring latch(es) for signal or variable "data_out", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[0]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[1]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[2]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[3]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[4]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[5]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[6]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[7]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[8]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[9]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[10]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[11]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[12]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[13]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[14]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (10041): Inferred latch for "data_out[15]" at memory.vhd(54) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 54
+Info (12128): Elaborating entity "continue_flag_tracker" for hierarchy "continue_flag_tracker:CFT" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 228
+Warning (10492): VHDL Process Statement warning at continue_flag_tracker.vhd(25): signal "con_var" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at continue_flag_tracker.vhd(14): inferring latch(es) for signal or variable "con_var", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd Line: 14
+Info (10041): Inferred latch for "con_var" at continue_flag_tracker.vhd(14) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd Line: 14
+Info (12128): Elaborating entity "data_postfix" for hierarchy "data_postfix:DP" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 236
+Info (12128): Elaborating entity "SE9" for hierarchy "SE9:SE9c" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 242
+Info (12128): Elaborating entity "SE6" for hierarchy "SE6:SE6c" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 248
+Info (12128): Elaborating entity "PE" for hierarchy "PE:Priority_Encoder" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 254
+Warning (10631): VHDL Process Statement warning at PE.vhd(15): inferring latch(es) for signal or variable "pe_var", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd Line: 15
+Info (10041): Inferred latch for "pe_var[0]" at PE.vhd(18) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd Line: 18
+Info (10041): Inferred latch for "pe_var[1]" at PE.vhd(18) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd Line: 18
+Info (10041): Inferred latch for "pe_var[2]" at PE.vhd(18) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/PE.vhd Line: 18
+Info (12128): Elaborating entity "decoder_for_Encoder" for hierarchy "decoder_for_Encoder:DFE" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 260
+Info (10041): Inferred latch for "decoder_Encoder_out[0]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[1]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[2]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[3]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[4]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[5]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[6]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (10041): Inferred latch for "decoder_Encoder_out[7]" at decoder_for_Encoder.vhd(13) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/decoder_for_Encoder.vhd Line: 13
+Info (12128): Elaborating entity "AND_Gate" for hierarchy "AND_Gate:ANDG" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 266
+Info (12128): Elaborating entity "Zero_checker" for hierarchy "Zero_checker:Zero_check" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 273
+Info (12128): Elaborating entity "t1" for hierarchy "t1:T1R" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 279
+Info (12128): Elaborating entity "op_code_finder" for hierarchy "op_code_finder:OPF" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 286
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:RF" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(84): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(86): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(88): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(90): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(92): signal "R4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(94): signal "R5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(96): signal "R6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(98): signal "R7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(102): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(104): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(106): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(108): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(110): signal "R4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(112): signal "R5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(114): signal "R6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(116): signal "R7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(119): signal "D1_Temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 119
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(120): signal "D2_Temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 120
+Warning (10631): VHDL Process Statement warning at Register_File.vhd(79): inferring latch(es) for signal or variable "D1_Temp", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Warning (10631): VHDL Process Statement warning at Register_File.vhd(79): inferring latch(es) for signal or variable "D2_Temp", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[0]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[1]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[2]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[3]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[4]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[5]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[6]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[7]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[8]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[9]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[10]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[11]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[12]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[13]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[14]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D2_Temp[15]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[0]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[1]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[2]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[3]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[4]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[5]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[6]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[7]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[8]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[9]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[10]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[11]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[12]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[13]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[14]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (10041): Inferred latch for "D1_Temp[15]" at Register_File.vhd(79) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/Register_File.vhd Line: 79
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic_Logical_Unit" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 307
+Warning (10492): VHDL Process Statement warning at ALU.vhd(35): signal "a_2s_compliment" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at ALU.vhd(35): signal "b_2s_compliment" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at ALU.vhd(38): signal "b_2s_compliment" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at ALU.vhd(39): signal "a_2s_compliment" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at ALU.vhd(30): inferring latch(es) for signal or variable "alu_c_temp", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ALU.vhd(30): inferring latch(es) for signal or variable "alu_c_dueto_2s_compliment", which holds its previous value in one or more paths through the process File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[0]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[1]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[2]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[3]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[4]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[5]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[6]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[7]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[8]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[9]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[10]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[11]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[12]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[13]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[14]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_dueto_2s_compliment[15]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[0]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[1]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[2]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[3]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[4]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[5]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[6]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[7]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[8]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[9]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[10]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[11]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[12]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[13]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[14]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (10041): Inferred latch for "alu_c_temp[15]" at ALU.vhd(30) File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+Info (12128): Elaborating entity "PC" for hierarchy "PC:Program_counter" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 316
+Info (12128): Elaborating entity "Temporary_Register" for hierarchy "Temporary_Register:T2" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 327
+Info (12128): Elaborating entity "Temporary_Register_3bit" for hierarchy "Temporary_Register_3bit:T4" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 343
+Info (12128): Elaborating entity "Temporary_Register_8bit" for hierarchy "Temporary_Register_8bit:T5" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 351
+Warning (14026): LATCH primitive "data3_writer[1]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[2]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[3]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[4]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[5]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[6]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[7]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[8]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[9]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[10]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[11]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[12]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[13]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[14]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "data3_writer[15]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "add3_read[1]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 183
+Warning (14026): LATCH primitive "add3_read[2]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 183
+Warning (14026): LATCH primitive "data3_writer[0]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 188
+Warning (14026): LATCH primitive "add3_read[0]" is permanently enabled File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 183
+Warning (113028): 1 out of 16 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/db/DUT.ram0_memory_e411fb78.hdl.mif Line: 1
+    Warning (113026): Memory Initialization File Address 15 is not initialized File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/db/DUT.ram0_memory_e411fb78.hdl.mif Line: 1
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276013): RAM logic "memory:Mem|memory_element" is uninferred because MIF is not supported for the selected family File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/memory.vhd Line: 30
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "ALU:Arithmetic_Logical_Unit|Add1" File: c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+Info (12130): Elaborated megafunction instantiation "ALU:Arithmetic_Logical_Unit|lpm_add_sub:Add1" File: c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+Info (12133): Instantiated megafunction "ALU:Arithmetic_Logical_Unit|lpm_add_sub:Add1" with the following parameter: File: c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_hai.tdf
+    Info (12023): Found entity 1: add_sub_hai File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/db/add_sub_hai.tdf Line: 23
+Warning (13012): Latch continue_flag_tracker:CFT|con_var has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/continue_flag_tracker.vhd Line: 14
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t1:T1R|t1_out[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/T1.vhd Line: 15
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[0] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[1] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[2] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[3] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[4] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[5] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[6] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[7] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[8] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[9] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[10] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[11] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[12] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[13] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[14] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_temp[15] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[1] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[2] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[3] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[4] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[5] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[6] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[7] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[8] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[9] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[10] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[11] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[12] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[13] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[14] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[15] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch ALU:Arithmetic_Logical_Unit|alu_c_dueto_2s_compliment[0] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/ALU.vhd Line: 30
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal alu_op_select[1] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 18
+Warning (13012): Latch T2_data_in[15] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[14] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[13] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[12] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[11] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[10] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[9] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[8] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[7] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[6] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[5] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[4] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[3] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[2] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[1] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Warning (13012): Latch T2_data_in[0] has unsafe behavior File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal t2_select[0] File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 42
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "mem_data_select" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 25
+    Warning (15610): No output dependent on input pin "rst" File: D:/IITB/Academics/Semester3/EE224/Project/Final/EE224_Course_Project/CPU/data_path.vhd Line: 70
+Info (21057): Implemented 1296 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 29 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 1259 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 156 warnings
+    Info: Peak virtual memory: 4802 megabytes
+    Info: Processing ended: Wed Nov 30 22:44:00 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:12
+
+
